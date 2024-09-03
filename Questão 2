@@ -1,0 +1,19 @@
+const Fibonacci = (num) => {
+    let sup, anterior = 0, atual = 1, conta = 1;
+    while(true){
+        if (conta === num) {
+          console.log("Pertence a sequência de Fibonacci");
+          break;
+        } else if (conta > num) {
+           console.log("Não pertence a sequência de Fibonacci");
+           break;
+        }
+ 
+        conta = atual + anterior;
+        sup = anterior
+        anterior = atual;
+        atual = conta;
+    }
+  }
+  
+  Fibonacci(34)
