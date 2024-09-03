@@ -1,1 +1,46 @@
+let array = [
+    {"dia": "1/1",
+        "valor": 0},
+    {"dia":"2/1",
+        "valor": 1882},
+    {"dia":"3/1",
+        "valor": 4000},
+    {"dia":"4/1",
+        "valor": 7333},
+    {"dia":"5/1",
+        "valor": 501},
+    {"dia":"6/1",
+        "valor": 12000},
+    {"dia":"7/1",
+        "valor": 5883},
+    {"dia": "8/1",
+        "valor": 1200},
+]
 
+const calcular = (valor) => {
+    let menor = 0, maior = 0, media = 0, i;
+    for(i = 0; i < valor.length; i++){
+        if(valor[i]["valor"] != 0){
+            if (menor === 0 && maior === 0){
+                menor = valor[i]["valor"]
+                maior = valor[i]["valor"]
+            } else {
+                if (menor > valor[i]["valor"]){
+                    menor = valor[i]["valor"]
+                }
+                if (maior < valor[i]["valor"]){
+                    maior = valor[i]["valor"]
+                }
+            }
+            media += valor[i]["valor"];
+        }
+    }
+    media = media/ valor.length;
+    for(i = 0; i < valor.length; i++){
+        if(valor[i]["valor"] > media){
+            console.log(`${valor[i]["dia"]}: ${valor[i]["valor"]}`)
+        }
+    }
+}
+
+calcular(array)
