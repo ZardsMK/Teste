@@ -1,0 +1,20 @@
+let array = [ { estado: "SP", valor: 67836.43 }, 
+    { estado:"RJ",valor: 36678.66}, 
+    { estado:"MG", valor: 29229.88}, 
+    { estado:"ES",valor: 27165.48}, 
+    { estado: "Outros",valor: 19849.53} ]
+
+const percentual = (nums) => {
+
+    let faturamento = 0;
+    for(let i = 0; i < nums.length; i++){
+        faturamento += nums[i].valor;
+    }
+    for (let i = 0; i < nums.length; i++){
+        let x, porceTotal = 100, estadoTotal = faturamento, estado = nums[i].valor;
+        x = ( porceTotal * estado ) / estadoTotal
+        console.log(`${nums[i].estado}: ${x.toFixed(2)}`)
+    }
+}
+
+percentual(array)
